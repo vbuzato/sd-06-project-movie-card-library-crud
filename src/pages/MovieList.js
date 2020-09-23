@@ -12,12 +12,6 @@ class MovieList extends Component {
     }
   }
 
-  // async test() {
-  //   const data1 = await movieAPI.getMovies;
-  //   const data = await data1.JSON();
-  //   return data;
-  // }
-
   async componentDidMount() {
     const fetchData = await movieAPI.getMovies();
     this.setState({ movies: fetchData});
