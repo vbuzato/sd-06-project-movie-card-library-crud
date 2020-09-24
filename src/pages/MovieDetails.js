@@ -8,8 +8,11 @@ class MovieDetails extends Component {
   constructor() {
     super();
 
+    this.deleteMovie = this.deleteMovie.bind(this);
+
     this.state = {
       movie: [],
+      shouldRedirect: false,
     }
   }
 
@@ -19,10 +22,17 @@ class MovieDetails extends Component {
     this.setState({ movie: fetchData});
   }
 
+  async deleteMovie(movieId) {
+    await movieAPI.deleteMovie(movieId);
+    this.setState({ shouldRedirect: true })
+  }
+
   render() {
-    const { movie } = this.state;
+    const { shouldRedirect, movie } = this.state;
     const { id, title, storyline, imagePath, genre, rating, subtitle } = movie;
-    
+
+    //if (shouldRedirect) return <Redirect to="/" />;
+
     if (movie.length === 0) return <Loading />;
 
 
@@ -36,6 +46,7 @@ class MovieDetails extends Component {
         <p>{`Rating: ${rating}`}</p>
         <button><Link to={`/movies/${id}/edit`}>EDITAR</Link></button>
         <button><Link to="/">VOLTAR</Link></button>
+        <button type="button" onClick={() => this.deleteMovie(id) }><Link to="/">DELETAR</Link></button>
       </div>
     );
   }
