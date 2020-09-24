@@ -31,7 +31,7 @@ class MovieDetails extends Component {
     const { shouldRedirect, movie } = this.state;
     const { id, title, storyline, imagePath, genre, rating, subtitle } = movie;
 
-    //if (shouldRedirect) return <Redirect to="/" />;
+    if (shouldRedirect) return <Redirect to="/" />;
 
     if (movie.length === 0) return <Loading />;
 
