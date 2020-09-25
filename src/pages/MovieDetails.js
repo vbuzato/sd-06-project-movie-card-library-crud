@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import { Link, Redirect } from 'react-router-dom';
 
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
-import { Link } from 'react-router-dom';
 
 class MovieDetails extends Component {
   constructor() {
@@ -12,26 +12,26 @@ class MovieDetails extends Component {
 
     this.state = {
       movie: [],
-      shouldRedirect: false,
-    }
+    };
   }
 
-  async componentDidMount() {
+  componentDidMount() {
+    this.getMovieFunction();
+  }
+
+  async getMovieFunction() {
     const id = this.props.match.params.id;
     const fetchData = await movieAPI.getMovie(id);
-    this.setState({ movie: fetchData});
+    this.setState({ movie: fetchData });
   }
 
   async deleteMovie(movieId) {
     await movieAPI.deleteMovie(movieId);
-    this.setState({ shouldRedirect: true })
   }
 
   render() {
     const { shouldRedirect, movie } = this.state;
     const { id, title, storyline, imagePath, genre, rating, subtitle } = movie;
-
-    if (shouldRedirect) return <Redirect to="/" />;
 
     if (movie.length === 0) return <Loading />;
 
@@ -46,7 +46,12 @@ class MovieDetails extends Component {
         <p>{`Rating: ${rating}`}</p>
         <button><Link to={`/movies/${id}/edit`}>EDITAR</Link></button>
         <button><Link to="/">VOLTAR</Link></button>
-        <button type="button" onClick={() => this.deleteMovie(id) }><Link to="/">DELETAR</Link></button>
+        <button
+          type="button"
+          onClick={() => this.deleteMovie(id)}
+        >
+          <Link to="/">DELETAR</Link>
+        </button>
       </div>
     );
   }
