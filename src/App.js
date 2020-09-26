@@ -1,12 +1,13 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { EditMovie, MovieDetails, MovieList, NewMovie, NotFound } from './pages';
+import { Navbar, Header } from './components';
 
 function App() {
   return (
     <BrowserRouter>
-      <div>Movie Card Library CRUD</div><br />
-      <Link to="/movies/new">ADICIONAR CARTÃO</Link>
+      <Navbar />
+      <Header />
       <Switch>
         <Route path="/movies/new" component={NewMovie} />
         <Route path="/movies/:id/edit" component={EditMovie} />

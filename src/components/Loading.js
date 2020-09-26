@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 class Loading extends Component {
   render() {
     return (
-      <div>Carregando...</div>
+      <div className="loading">
+        <img src="/images/loader.gif" width="300px" alt="Loading"/>
+      </div>
     );
   }
 }

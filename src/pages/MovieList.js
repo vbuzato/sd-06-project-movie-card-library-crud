@@ -27,7 +27,7 @@ class MovieList extends Component {
     if (movies.length === 0) return <Loading />;
 
     return (
-      <div data-testid="movie-list">
+      <div className="content">
         {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
       </div>
     );
