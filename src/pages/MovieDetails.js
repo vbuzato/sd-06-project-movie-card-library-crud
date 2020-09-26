@@ -37,20 +37,30 @@ class MovieDetails extends Component {
 
     return (
       <div className="content">
-        <img alt="Movie Cover" src={`../${imagePath}`} />
-        <p>{`Title: ${title}`}</p>
-        <p>{`Subtitle: ${subtitle}`}</p>
-        <p>{`Storyline: ${storyline}`}</p>
-        <p>{`Genre: ${genre}`}</p>
-        <p>{`Rating: ${rating}`}</p>
-        <button><Link to={`/movies/${id}/edit`}>EDITAR</Link></button>
-        <button><Link to="/">VOLTAR</Link></button>
-        <button
-          type="button"
-          onClick={() => this.deleteMovie(id)}
-        >
-          <Link to="/">DELETAR</Link>
-        </button>
+        <div className="movie-card card-movie-details">
+          <h3 className="title-card">{title} - {subtitle}</h3>
+          <img alt="Movie Cover" src={`../${imagePath}`} width="40%" />
+          <div className="card-description">
+            <p className="storyline">{storyline}</p>
+            <p className="genre-rating">{`Genre: ${genre} | Rating: ${rating}`}</p>
+            <div className="buttons">
+              <Link to={`/movies/${id}/edit`}>
+                <button className="bt">edit</button>
+              </Link>
+              <Link to="/">
+                <button className="bt">home</button>
+              </Link>
+              <Link to="/">
+                <button className="bt bt-delete"
+                  type="button"
+                  onClick={() => this.deleteMovie(id)}
+                >
+                  delete
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
