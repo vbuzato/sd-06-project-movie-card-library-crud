@@ -11,7 +11,7 @@ class MovieCard extends React.Component {
         <h3 className="title-card">{title}</h3>
         <Link to={pathMovieDetails} className="link right-bt">
           <button type="button" className="bt-add-new">
-              <img src="/images/plus-icon.png" width="16px" />
+              <img src="/images/plus-icon.png" width="16px" alt="" />
               <span className="text-bt">ver detalhes</span>
           </button>
         </Link>
@@ -20,6 +20,8 @@ class MovieCard extends React.Component {
     );
   }
 }
+
+MovieCard.defaultProps = { movie: PropTypes.objectOf() };
 
 MovieCard.propTypes = {
   movie: PropTypes.shape({

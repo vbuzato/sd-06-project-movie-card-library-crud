@@ -8,8 +8,8 @@ const Navbar = () => {
       <nav className="nav-wrap">
         <div className="github-see-code">
           <div className="bg-see-github">
-            <a href={urlGitHub} className="link-nav" target="_blank">
-              <img src="/images/github-logo.png" />
+            <a href={urlGitHub} className="link-nav" target="_blank" rel="noopener noreferrer">
+              <img src="/images/github-logo.png" alt="GitHub" />
               <span className="see-code">See the code on github</span>
             </a>
           </div>

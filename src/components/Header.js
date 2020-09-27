@@ -8,7 +8,7 @@ class Header extends React.Component {
         <h1 className="title-movie-card">Movie Card Library CRUD</h1>
           <Link to="/movies/new" className="link">
             <button type="button" className="bt-add-new">
-                <img src="/images/plus-icon.png" />
+                <img src="/images/plus-icon.png" alt="" />
                 <span className="text-bt">Add new card</span>
             </button>
           </Link>
