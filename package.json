@@ -1,6 +1,6 @@
 {
   "name": "sd-0x-block14-project-movie-card-library-crud",
-  "home": "https://vbuzato.github.io/sd-06-project-movie-card-library-crud",
+  "home": "https://vbuzato.github.io/sd-06-project-movie-card-library-crud/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,7 +9,6 @@
     "mutationobserver-shim": "^0.3.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1"
   },
   "scripts": {
@@ -37,6 +36,7 @@
   },
   "devDependencies": {
     "@testing-library/react": "^10.0.4",
+    "react-router-dom": "^5.2.0",
     "gh-pages": "^3.1.0"
   }
 }
