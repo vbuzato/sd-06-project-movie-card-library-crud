@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import {
   EditMovie,
   MovieDetails,
@@ -11,7 +11,7 @@ import { Navbar, Header } from "./components";
 
 function App() {
   return (
-    <HashRouter basename="/">
+    <BrowserRouter>
       <Navbar />
       <Header />
       <Switch>
@@ -21,7 +21,7 @@ function App() {
         <Route exact path="/" component={MovieList} />
         <Route component={NotFound} />
       </Switch>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
