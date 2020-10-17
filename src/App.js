@@ -11,7 +11,7 @@ import { Navbar, Header } from "./components";
 
 function App() {
   return (
-    <HashRouter>
+    <HashRouter basename="/">
       <Navbar />
       <Header />
       <Switch>
