@@ -1,11 +1,17 @@
-import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { EditMovie, MovieDetails, MovieList, NewMovie, NotFound } from './pages';
-import { Navbar, Header } from './components';
+import React from "react";
+import { HashRouter, Switch, Route } from "react-router-dom";
+import {
+  EditMovie,
+  MovieDetails,
+  MovieList,
+  NewMovie,
+  NotFound,
+} from "./pages";
+import { Navbar, Header } from "./components";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Navbar />
       <Header />
       <Switch>
@@ -15,7 +21,7 @@ function App() {
         <Route exact path="/" component={MovieList} />
         <Route component={NotFound} />
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
